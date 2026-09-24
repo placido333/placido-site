@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plácido — Copywriter & Media Buyer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #000;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #000;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid #000;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .cta-button-secondary:hover {
+            background: #000;
+            color: white;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: #f8f8f8;
+        }
+
+        .services h2 {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #000;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Expertise */
+        .expertise {
+            padding: 100px 0;
+        }
+
+        .expertise h2 {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #000;
+        }
+
+        .expertise-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .expertise-text h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .expertise-text p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .platforms {
+            margin-top: 30px;
+        }
+
+        .platforms h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .platform-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background: #f0f0f0;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .expertise-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .highlight {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #000;
+        }
+
+        .highlight h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .highlight p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: #000;
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            margin: 100px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            background: white;
+            color: #000;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button-white:hover {
+            background: #f0f0f0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            nav a {
+                margin-left: 20px;
+                font-size: 12px;
+            }
+
+            .expertise-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button-secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Plácido</div>
+                <nav>
+                    <a href="#services">Serviços</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Copywriting & Media Buying para Negócios Internacionais</h1>
+            <p>Especialista em criar mensagens persuasivas e gerenciar campanhas de tráfego que conversão real. Trabalho com empresas ao redor do mundo.</p>
+            <div>
+                <a href="#contact" class="cta-button">Conversar comigo</a>
+                <a href="#expertise" class="cta-button-secondary">Conhecer mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>O que Entrego</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Copywriting de Conversão</h3>
+                    <p>Textos persuasivos para páginas de venda, emails, anúncios e conteúdo que não apenas atrai, mas converte leads em clientes pagos. Trabalho em português e com empresas internacionais.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gestão de Tráfego Pago</h3>
+                    <p>Criação e otimização de campanhas em Google Ads e Taboola. Desde configuração inicial até otimização contínua, garantindo ROI positivo em seus investimentos em publicidade.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Estratégia de Marketing</h3>
+                    <p>Análise de mercado, definição de personas, planejamento de campanhas e acompanhamento de métricas. Tudo pensado para crescimento consistente do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="expertise" id="expertise">
+        <div class="container">
+            <h2>Minha Experiência</h2>
+            <div class="expertise-content">
+                <div class="expertise-text">
+                    <h3>Mais de 5 anos na Área</h3>
+                    <p>Com mais de 5 anos de experiência em copywriting e 2 anos atuando profissionalmente, tenho desenvolvido expertise em criar mensagens que vendem e campanhas que escalam.</p>
+                    <p>Trabalho com empresas internacionais, entendo as nuances de mercados diferentes e sei como adaptar mensagens para contextos variados e plataformas específicas.</p>
+                    <div class="platforms">
+                        <h4>Plataformas que Domino</h4>
+                        <div class="platform-list">
+                            <span class="platform-badge">Google Ads</span>
+                            <span class="platform-badge">Taboola</span>
+                            <span class="platform-badge">Email Marketing</span>
+                            <span class="platform-badge">Landing Pages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-highlights">
+                    <div class="highlight">
+                        <h4>Copy de Alta Conversão</h4>
+                        <p>Textos otimizados para cada etapa do funil de vendas, focados em resultados mensuráveis.</p>
+                    </div>
+                    <div class="highlight">
+                        <h4>Media Buying Estratégico</h4>
+                        <p>Gestão eficiente de orçamentos com foco em CPA reduzido e ROAS otimizado.</p>
+                    </div>
+                    <div class="highlight">
+                        <h4>Contexto Internacional</h4>
+                        <p>Experiência com empresas globais e compreensão de diferentes mercados e públicos.</p>
+                    </div>
+                    <div class="highlight">
+                        <h4>Análise de Dados</h4>
+                        <p>Decisões baseadas em métricas reais. Testes A/B contínuos para melhoria constante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Pronto para Escalar seu Negócio?</h2>
+            <p>Vamos conversar sobre como posso ajudar seu business a crescer com copywriting efetivo e campanhas de tráfego otimizadas.</p>
+            <a href="mailto:placidoantony123@gmail.com" class="cta-button-white">Entrar em Contato</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Plácido. Copywriter & Media Buyer para Negócios Internacionais.</p>
+        </div>
+    </footer>
+</body>
+</html>
